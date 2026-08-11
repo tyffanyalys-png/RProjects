@@ -10,21 +10,21 @@ Simul= function(tab,s){
   View(tab)
   tab=as.data.frame(tab)
   clean_names(tab)
-  print(sapply(tab,class))
+  # print(sapply(tab,class))
   #Je crée une dataframe pour acceuillir les valeurs simulées qualitatives
   b=data.frame()
   a=data.frame()
   noms2=c()
   noms=c()
-  print(ncol(tab))
-  print(nrow(tab))
+  # print(ncol(tab))
+  # print(nrow(tab))
   for (i in 1:ncol(tab)){
     for (j in 1:nrow(tab)){
       val1=tab[j,i,drop=T]  
       val2=tab[j+1,i,drop=T]
       if (is.numeric(val1)&&is.numeric(val2)&&!is.na(val2)){
         a=rbind(a,sample(val1:val2,s,replace=TRUE))
-        print(colnames(tab[i]))
+        # print(colnames(tab[i]))
         noms=cbind(noms,colnames(tab[i]))
       }
     }
